@@ -53,6 +53,11 @@ const sampleRaces: Race[] = [
 ];
 
 function App() {
+  const [showIntro, setShowIntro] = useState(true);
+  useEffect(() => {
+    const introTimer = window.setTimeout(() => setShowIntro(false), 2450);
+    return () => window.clearTimeout(introTimer);
+  }, []);
   const [season, setSeason] = useState("2026");
   const [page, setPage] = useState<"dashboard" | "explorer">("dashboard");
   const [drivers, setDrivers] = useState<Driver[]>(sampleDrivers);
@@ -110,7 +115,9 @@ function App() {
   const maxPoints = Math.max(...drivers.map((d) => Number(d.points)), 1);
 
   return (
-    <div className="app-shell">
+    <>
+      {showIntro && <F1IntroAnimation />}
+      <div className="app-shell">
       <aside className="sidebar">
         <a className="brand" href="#" onClick={(e) => { e.preventDefault(); setPage("dashboard"); }}>
           <span className="brand-mark">A</span><span>APEX<span className="brand-muted">REPLAY</span><small>F1 INTELLIGENCE</small></span>
@@ -188,6 +195,29 @@ function App() {
         )}
         <footer><span>APEXREPLAY F1</span><span>BUILT FOR THE DATA BEHIND THE RACING.</span><span>UNOFFICIAL FAN PROJECT · NOT AFFILIATED WITH FORMULA 1</span></footer>
       </main>
+      </div>
+    </>
+  );
+}
+
+function F1IntroAnimation() {
+  return (
+    <div className="f1-intro" aria-hidden="true">
+      <div className="intro-track-line" />
+      <div className="intro-car">
+        <svg viewBox="0 0 160 64" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 39h19l10-13h25l12-9h23l15 9h17l18 8 7 5v8h-18a13 13 0 0 0-25 0H57a13 13 0 0 0-25 0H8z" fill="#ed3543"/>
+          <path d="M59 26l12-8h22l12 8z" fill="#252a35"/>
+          <path d="M70 18l5-7h16l6 7z" fill="#ed3543"/>
+          <path d="M10 35h29l-6 6H8zM111 28h20l15 8h-23z" fill="#f7f7f7"/>
+          <path d="M43 28h16l-7 11H35z" fill="#b91f2c"/>
+          <path d="M119 24h19v4h-19zM4 45h26v4H4z" fill="#ed3543"/>
+          <circle cx="44" cy="47" r="10" fill="#090b10" stroke="#8d96a4" strokeWidth="3"/>
+          <circle cx="123" cy="47" r="10" fill="#090b10" stroke="#8d96a4" strokeWidth="3"/>
+          <circle cx="44" cy="47" r="3" fill="#7c8491"/><circle cx="123" cy="47" r="3" fill="#7c8491"/>
+          <path d="M64 39h37" stroke="#ffb3b7" strokeWidth="2" opacity=".75"/>
+        </svg>
+      </div>
     </div>
   );
 }
