@@ -217,6 +217,7 @@ function F1IntroAnimation() {
           <circle cx="44" cy="47" r="3" fill="#7c8491"/><circle cx="123" cy="47" r="3" fill="#7c8491"/>
           <path d="M64 39h37" stroke="#ffb3b7" strokeWidth="2" opacity=".75"/>
         </svg>
+        <span className="intro-message">itsHammer time</span>
       </div>
     </div>
   );
