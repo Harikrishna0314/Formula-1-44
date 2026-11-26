@@ -87,7 +87,7 @@ function App() {
         setDrivers(nextDrivers.length ? nextDrivers : sampleDrivers);
         setConstructors(nextConstructors.length ? nextConstructors : sampleConstructors);
         setRaces(nextRaces.length ? nextRaces : sampleRaces);
-        setSource(nextDrivers.length || nextRaces.length ? "api" : "sample");
+        setSource(nextDrivers.length && nextConstructors.length ? "api" : "sample");
       } catch {
         if (!active) return;
         setDrivers(sampleDrivers);
