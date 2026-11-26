@@ -55,7 +55,7 @@ const sampleRaces: Race[] = [
 function App() {
   const [showIntro, setShowIntro] = useState(true);
   useEffect(() => {
-    const introTimer = window.setTimeout(() => setShowIntro(false), 2450);
+    const introTimer = window.setTimeout(() => setShowIntro(false), 2850);
     return () => window.clearTimeout(introTimer);
   }, []);
   const [season, setSeason] = useState("2026");
