@@ -205,6 +205,7 @@ function F1IntroAnimation() {
     <div className="f1-intro" aria-hidden="true">
       <div className="intro-track-line" />
       <div className="intro-car">
+        <span className="intro-message">Its Hammer Time</span>
         <svg viewBox="0 0 160 64" xmlns="http://www.w3.org/2000/svg">
           <path d="M8 39h19l10-13h25l12-9h23l15 9h17l18 8 7 5v8h-18a13 13 0 0 0-25 0H57a13 13 0 0 0-25 0H8z" fill="#ed3543"/>
           <path d="M59 26l12-8h22l12 8z" fill="#252a35"/>
@@ -217,7 +218,6 @@ function F1IntroAnimation() {
           <circle cx="44" cy="47" r="3" fill="#7c8491"/><circle cx="123" cy="47" r="3" fill="#7c8491"/>
           <path d="M64 39h37" stroke="#ffb3b7" strokeWidth="2" opacity=".75"/>
         </svg>
-        <span className="intro-message">Its Hammer Time</span>
       </div>
     </div>
   );
