@@ -128,7 +128,7 @@ function App() {
         <header className="topbar">
           <div className="breadcrumb">APEXREPLAY <span>/</span> {page === "dashboard" ? "OVERVIEW" : "RACE EXPLORER"}</div>
           <div className="top-actions">
-            <span className={`data-pill ${source}`}><i />{source === "api" ? "LIVE DATA" : source === "loading" ? "LOADING" : "DEMO DATA"}</span>
+            <span className={`data-pill ${source}`}><i />{source === "api" ? "API DATA" : source === "loading" ? "LOADING" : "DEMO DATA"}</span>
             <label className="season-select"><span>SEASON</span><select value={season} onChange={(e) => setSeason(e.target.value)}><option value="2026">2026</option><option value="2025">2025</option><option value="2024">2024</option><option value="2023">2023</option></select></label>
           </div>
         </header>
